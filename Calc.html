@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Calc</title>
+<link rel="stylesheet" href="./Calc.css">
+</head>
+<body>
+<div class="main">
+	<div class="menu">
+		<img src="./menu.png" alt>
+	</div>
+	<div class="name">
+			<h3>Standard Calculator</h3>
+	</div>
+</div>	
+<div class="tab">
+	<table border=1>
+		<tr>
+			<td colspan="5"><input type="text" style="font-size: xx-large;text-align: right;" id="result" ></td>
+			
+		</tr>
+			
+		<tr>
+			<td><button  onclick="per()" id="result">%</button></td>
+			<td><button onclick="clr()" id="result">CE</button></td>
+			<td><button onclick="clr()" id="result">C</button></td>
+			<td><button onclick="back()" id="result">Back</button></td>
+			<td><button onclick="display('/')" id="result">/</button></td>
+		</tr>
+		
+		
+		<tr>
+			<td><button onclick="sqr()" id="result">&#8730</button></td>
+			<td><button onclick="display('7')" id="result">7</button></td>
+			<td><button onclick="display('8')" id="result">8</button></td>
+			<td><button onclick="display('9')" id="result">9</button></td>
+			<td><button onclick="display('*')" id="result">*</button></td>
+		</tr>
+		
+		<tr>
+			<td><button onclick="display('**2')" id="result">X<sup>2</sup></button></td>
+			<td><button onclick="display('4')" id="result">4</button></td>
+			<td><button onclick="display('5')" id="result">5</button></td>
+			<td><button onclick="display('6')" id="result">6</button></td>
+			<td><button onclick="display('-')" id="result">-</button></td>
+		</tr>
+		
+		<tr>
+			<td><button onclick="display('**3')" id="result">X<sup>3</sup></button></td>
+			<td><button onclick="display('1')" id="result">1</button></td>
+			<td><button onclick="display('2')" id="result">2</button></td>
+			<td><button onclick="display('3')" id="result">3</button></td>
+			<td><button onclick="display('+')" id="result">+</button></td>
+		</tr>
+		
+		<tr>
+			<td><button onclick="one()" id="result">1/x</button></td>
+			<td><button onclick="" id="result">+/-</button></td>
+			<td><button onclick="display('0')" id="result">0</button></td>
+			<td><button onclick="display('.')" id="result">.</button></td>
+			<td><button onclick="ans()" id="result">=</button></td>
+		</tr>
+	</table>
+</div>
+<script>
+	function display(val) 
+         { 
+             document.getElementById("result").value+=val 
+         } 
+		 
+		 function ans() 
+         { 
+             let x = document.getElementById("result").value 
+             let y = eval(x) 
+             document.getElementById("result").value = y 
+         } 
+		 
+		  function clr() 
+         { 
+             document.getElementById("result").value = "" 
+         } 
+		 
+		 function back()
+		 {
+		 let x=document.getElementById("result").value;
+		 x=Math.floor(x/10);
+		 document.getElementById("result").value=x;
+		 }
+		 function sqr()
+		 {
+		 let x = document.getElementById("result").value
+		 let y = Math.sqrt(Number(x));
+		 document.getElementById("result").value=y;
+		 }
+		 
+		 function per()
+		 {
+		 let x = document.getElementById("result").value;
+		 x = x/100;
+		 document.getElementById("result").value = +x;
+		 }
+		 
+		 function one()
+		 {
+		 let x = document.getElementById("result").value;
+		 x = 1/x;
+		 document.getElementById("result").value = +x;
+		 
+		 }
+</script>
+</body>
+</html>
